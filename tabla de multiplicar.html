@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+    <style>
+        table{
+            margin: auto;
+            width: 40%;
+        }
+        input[type=text]{
+            padding: 10px;
+            font-size: large;
+        }
+        input[type=button]{
+            padding: 10px;
+            font-size:medium;
+            background-color: chocolate;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 150px;
+            height: 60px;
+        }
+    </style>
+    <script>
+        function tabla(){
+            
+            document.getElementById("Zona").innerHTML="";
+            //obtener el número
+            let n = parseInt(document.getElementById("txtNum").value);
+
+            if (n >=13){
+                document.getElementById("num").src="img/X.png";
+            }else{
+                for(let k=1; k<=12 ; k++){
+                document.getElementById("Zona").innerHTML= document.getElementById("Zona").innerHTML + "<br>" + n + "<span style='color:red' <b> x </span> " + k + " = " + (n*k) ;
+            }
+            switch (n){
+                case 1:
+                    document.getElementById("num").src="img/11111111.png"
+                    break;
+                case 2:
+                    document.getElementById("num").src="img/22.png"
+                    break;
+                case 3:
+                    document.getElementById("num").src="img/3.jpg"
+                    break;
+
+            }
+            }
+
+            
+
+        }
+        function limpiar(){
+                document.getElementById("Zona").innerHTML="";
+                document.getElementById("txtNum").value ="";
+            }
+    </script>
+</head>
+<body>
+    <div style="text-align:center ; margin:auto ; width:60% ;">
+        <img src="img/baner matematica.jpg" alt="">
+    </div>
+    <h1 style="text-align:center ;">tabala de Multiplicar</h1>
+    <br>
+    <table>
+        <tr>
+            <td style="font-size:25px;">Número</td>
+            <td>
+                <input type="text" name="" id="txtNum">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="tabla();" value="Multiplicar">
+            </td>
+            <td>
+                <input type="button" onclick="limpiar();"  value="Nuevo">        
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="Zona" style="font-size:22px ; padding: 12px;">
+
+                </div>
+            </td>
+            <td>
+                <img src="img/3.jpg" width="300px" alt="" id="num">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
